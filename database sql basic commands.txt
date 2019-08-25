@@ -1,0 +1,208 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.1.38-community MySQL Community Server (GPL)
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE TABLE Product
+    -> ( id int);
+ERROR 1046 (3D000): No database selected
+mysql> USE Adventure
+ERROR 1049 (42000): Unknown database 'adventure'
+mysql> USE AdventureWork;
+Database changed
+mysql> CREATE TABLE Product
+    -> (
+    -> ProductID int,
+    -> name varchar(20)
+    -> );
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> INSERT INTO Product VALUES (1,'MOHINI',2,'KALPYA',3,'HEARTBROKENBOY',4,'SHUBHAM');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO Product VALUES (1,'MOHINI');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Product VALUES (2,'KALPYA'),(3,'HEARTBROKENBOY'),(4,'SHUBHAM');
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *
+    ->   FROM Product;
++-----------+----------------+
+| ProductID | name           |
++-----------+----------------+
+|         1 | MOHINI         |
+|         2 | KALPYA         |
+|         3 | HEARTBROKENBOY |
+|         4 | SHUBHAM        |
++-----------+----------------+
+4 rows in set (0.00 sec)
+
+mysql>   select name from product;
++----------------+
+| name           |
++----------------+
+| MOHINI         |
+| KALPYA         |
+| HEARTBROKENBOY |
+| SHUBHAM        |
++----------------+
+4 rows in set (0.00 sec)
+
+mysql>   select id from product;
+ERROR 1054 (42S22): Unknown column 'id' in 'field list'
+mysql>   select ProductId from product;
++-----------+
+| ProductId |
++-----------+
+|         1 |
+|         2 |
+|         3 |
+|         4 |
++-----------+
+4 rows in set (0.00 sec)
+
+mysql>   select ProductId,name from product;
++-----------+----------------+
+| ProductId | name           |
++-----------+----------------+
+|         1 | MOHINI         |
+|         2 | KALPYA         |
+|         3 | HEARTBROKENBOY |
+|         4 | SHUBHAM        |
++-----------+----------------+
+4 rows in set (0.00 sec)
+
+mysql>   select ProductId,name from product where name='SHUBHAM';
++-----------+---------+
+| ProductId | name    |
++-----------+---------+
+|         4 | SHUBHAM |
++-----------+---------+
+1 row in set (0.03 sec)
+
+mysql> INSERT INTO Product VALUES (2,'ROHINI');
+Query OK, 1 row affected (0.03 sec)
+
+mysql>   select ProductId,name from product;
++-----------+----------------+
+| ProductId | name           |
++-----------+----------------+
+|         1 | MOHINI         |
+|         2 | KALPYA         |
+|         3 | HEARTBROKENBOY |
+|         4 | SHUBHAM        |
+|         2 | ROHINI         |
++-----------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> UPDATE Product
+    -> set ProductId=5
+    -> where name='ROHINI';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+mysql> SELECT *
+    ->   FROM PRODUCT;
++-----------+----------------+
+| ProductID | name           |
++-----------+----------------+
+|         1 | MOHINI         |
+|         2 | KALPYA         |
+|         3 | HEARTBROKENBOY |
+|         4 | SHUBHAM        |
+|         5 | ROHINI         |
++-----------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> UPATE PRODUCT
+    -> SET NAME=  'SHUBHAM'
+    -> WHERE NAME='KALPYA';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPATE PRODUCT
+SET NAME=  'SHUBHAM'
+WHERE NAME='KALPYA'' at line 1
+mysql> UPDATE PRODUCT
+    -> SET NAME=  'SHUBHAM'
+    -> WHERE NAME='KALPYA';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT *
+    -> FROm product;
++-----------+----------------+
+| ProductID | name           |
++-----------+----------------+
+|         1 | MOHINI         |
+|         2 | SHUBHAM        |
+|         3 | HEARTBROKENBOY |
+|         4 | SHUBHAM        |
+|         5 | ROHINI         |
++-----------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> UPDATE PRODUCT
+    -> SET NAME='KALPYA'
+    -> WHERE PRODUCTID=4;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT *
+    ->   FROM PRODUCT;
++-----------+----------------+
+| ProductID | name           |
++-----------+----------------+
+|         1 | MOHINI         |
+|         2 | SHUBHAM        |
+|         3 | HEARTBROKENBOY |
+|         4 | KALPYA         |
+|         5 | ROHINI         |
++-----------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> DELETE PRODUCT
+    -> WHERE NAME='ROHINI';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE NAME='ROHINI'' at line 2
+mysql> DELETE FROM PRODUCT
+    -> WHERE NAME='ROHINI';
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT *
+    -> FROm product;
++-----------+----------------+
+| ProductID | name           |
++-----------+----------------+
+|         1 | MOHINI         |
+|         2 | SHUBHAM        |
+|         3 | HEARTBROKENBOY |
+|         4 | KALPYA         |
++-----------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> TRUNCATE TABLE PRODUCT;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> SELECT *
+    -> FROm product;
+Empty set (0.00 sec)
+
+mysql> INSERT INTO PRODUCT VALUES(1,'MOHINI');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> SELECT *
+    -> FROm product;
++-----------+--------+
+| ProductID | name   |
++-----------+--------+
+|         1 | MOHINI |
++-----------+--------+
+1 row in set (0.00 sec)
+
+mysql> DROP TABLE PRODUCT;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO PRODUCT VALUES(1,'MOHINI');
+ERROR 1146 (42S02): Table 'adventurework.product' doesn't exist
+mysql>
