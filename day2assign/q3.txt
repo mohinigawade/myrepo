@@ -1,0 +1,65 @@
+//3)create a class "MyClass1"
+//with members and member function "disp1().
+//create another class "MyClass2"
+//with members and member function "disp2().
+//now try to invoke disp1() from disp2()
+//in the main() function, create instances of both the classes 
+//and invoke their member functions.
+#include<iostream>
+using namespace std;
+class myclass1
+{
+public:
+	int num1;
+	void disp1()
+	{
+		cout<<"in disp"<<num1<<endl;
+	}
+	myclass1()
+	{
+		cout<<"in default const"<<endl;
+
+	}
+	myclass1(int num)
+	{
+		cout<<"in param const"<<endl;
+		this->num1=num;
+	}
+	myclass1(myclass1 &ref)
+	{
+		cout<<"in copy const"<<endl;
+	}
+};
+
+class myclass2
+{
+public:
+	int num2;
+	void disp2()
+	{
+		cout<<"in disp"<<num2<<endl;
+		myclass1 m(10);
+		m.disp1();
+
+	}
+	myclass2()
+	{
+		cout<<"in default const"<<endl;
+	}
+	myclass2(int num)
+	{
+		cout<<"in param const"<<endl;
+		this->num2=num;
+	}
+	myclass2(myclass1 &ref)
+	{
+		cout<<"in copy const"<<endl;
+	}
+};
+void main()
+{
+	myclass1 m1(10);
+	myclass2 m(10);
+	m.disp2();
+
+}

@@ -1,0 +1,9 @@
+#include<iostream>
+#include "C:\Users\vita1\Desktop\MohiniShraddha\day2\client\MyHead.h"
+void main()
+{
+	book b1(15);
+	b1.getprice();
+	book *b3=new book(50);
+	b3->getprice();
+}

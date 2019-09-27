@@ -1,0 +1,37 @@
+//1) create a class with constructors and destructors.
+//create array of instances and observe how program behaves.
+//
+
+#include<iostream>
+using namespace std;
+class myclass
+	{
+	public:
+		int k;
+		myclass()
+		{
+			cout<<"in default constructor"<<endl;
+		}
+		myclass(int k)
+		{
+				cout<<"in param constructor"<<endl;
+				this->k=k;
+		}
+		myclass( myclass &ref)
+		{
+				cout<<"in copy constructor"<<endl;
+				k=ref.k;
+		}
+		~myclass()
+		{
+			cout<<"in destructor"<<endl;
+		}
+
+	};
+void main()
+{
+	
+
+	myclass m[3]={100,200,300};
+	
+}

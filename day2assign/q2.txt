@@ -1,0 +1,37 @@
+//2) create a class with constructors and destructor.
+//create 2 instances on stack and 1 instance on heap. observe the invocation of constructors and destructors.
+
+
+#include<iostream>
+using namespace std;
+class myclass
+	{
+	public:
+		int k;
+		myclass()
+		{
+			cout<<"in default constructor"<<endl;
+		}
+		myclass(int k)
+		{
+				cout<<"in param constructor"<<endl;
+				this->k=k;
+		}
+		myclass( myclass &ref)
+		{
+				cout<<"in copy constructor"<<endl;
+				k=ref.k;
+		}
+		~myclass()
+		{
+			cout<<"in destructor"<<endl;
+		}
+
+	};
+void main()
+{
+	myclass m;
+	myclass m1(100);
+	myclass *m2 = new myclass;
+	delete m2;
+}

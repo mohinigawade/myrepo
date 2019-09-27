@@ -1,0 +1,22 @@
+#include<iostream>
+#include "MyHead.h"
+using namespace std;
+book::book(int price)
+{
+	cout<<"in default"<<endl;
+}
+void book::getBookId()
+{
+	cout<<"book id"<<endl;
+}
+void book::getbookname()
+{
+	cout<<"book name"<<endl;
+}
+void book::getprice()
+{
+	cout<<"price"<<endl;
+}
+book::~book()
+{
+}
