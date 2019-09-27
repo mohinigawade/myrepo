@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+void Swap(int *,int *); 
+int main()
+{
+	void (*ptr)(int *,int *);
+	int a=9,b=3;
+	ptr=Swap;
+	ptr(&a,&b);
+	cout<<a<<b;
+	return 0;
+}
+void Swap(int *a,int *b)
+	{  int c;
+         c=*a;
+		 *a=*b;
+		 *b=c;
+		
+	}

@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+void fun(int a,int b,int c,int d=12,int e=10)
+{
+	cout<<a<<b<<c<<d<<e<<endl;
+}
+int main()
+{
+	fun(1,2,30);
+	cout<<"\n";
+	fun(1,7,8,98,5);
+}

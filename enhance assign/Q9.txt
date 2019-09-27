@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+struct Employee
+{
+	int id;
+	char *name;
+	char *desig;
+}e5={100,"dtc","ykg"};
+Employee & fun();
+int main()
+{   
+	Employee &e=fun();
+	cout<<e.id;
+	e.id=500;
+	cout<<e.id;
+	return 0;
+}
+Employee & fun()
+{
+	return e5;
+}

@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int size;
+	cin>>size;
+	char *ptr=new char[size+1] ;
+	cin>>ptr;
+	puts(ptr);
+	return 0;
+}

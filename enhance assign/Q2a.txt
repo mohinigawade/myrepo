@@ -1,0 +1,25 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+struct book
+{
+	char bid[5];
+	char name[30];
+	int price;
+};
+void main()
+{
+struct book b2[5];
+struct book *ptr=b2;
+for(int i=0;i<=x;i++)
+	{
+               
+		cin>>ptr[i].bid;
+		cout<<ptr[i].bid<<endl;
+		cin>>ptr[i].name;
+		cout<<ptr[i].name<<endl;
+		cin>>ptr[i].price;
+		cout<<ptr[i].price<<endl;
+	}
+	getch();
+}

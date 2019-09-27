@@ -1,0 +1,9 @@
+#include<iostream>
+#include "C:\Users\vita1\Desktop\MohiniShraddha\Q12\cli\Header.h"
+using namespace std;
+int main()
+{
+	int a=10,b=15,c;
+	c=difference(a,b);
+	cout<<c<<endl;
+}

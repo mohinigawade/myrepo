@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+void disp(); 
+int main()
+{
+	void (*ptr)();
+	ptr=disp;
+	ptr();
+	return 0;
+}
+void disp()
+	{
+		cout<<"hello"<<endl;
+	}
+.
+

@@ -1,0 +1,11 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+void main()
+{
+	char name[20];
+	char addr[30];
+	int age;
+	cin>>name>>addr>>age; //endl;
+	cout<<name<<addr<<age<<endl;
+}
