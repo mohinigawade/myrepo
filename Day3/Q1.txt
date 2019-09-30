@@ -1,0 +1,59 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class Second;
+class First
+   {
+      char str1[20];
+   public:
+	   First(char a[20])
+	   {
+		  for(int i=0;i<strlen(a);i++)
+		  {
+			  str1[i]=a[i];
+		  }
+		  str1[strlen(a)]='\0';
+		  cout<<str1<<endl;
+	   }
+	  friend char* concat(First &,Second &);
+	  friend void concat1(First &ref1,Second &ref2);
+   };
+   class Second
+   {
+      char str2[20];
+   public:
+	   Second(char a[20])
+	   {
+		   for(int i=0;i<strlen(a);i++)
+		  {
+			  str2[i]=a[i];
+		  }
+		  str2[strlen(a)]='\0';
+		  cout<<str2<<endl;
+	   }
+	  friend char* concat(First &,Second &);
+	 friend void concat1(First &ref1,Second &ref2);
+   };
+   char* concat(First &ref1,Second &ref2)
+   {
+	   char *ptr=new char[strlen(ref1.str1)+strlen(ref2.str2)+1];
+	   strcpy( ptr,ref1.str1);
+	   strcat(ptr,ref2.str2);
+	  return ptr;
+   };
+   void concat1(First &ref1,Second &ref2)
+   {
+	   char ptr[40];
+	   strcpy( ptr,ref1.str1);
+	   strcat(ptr,ref2.str2);
+	   cout<<ptr<<endl;
+   };
+int main()
+{
+	First f("mohini");
+	Second s("Gawade");
+	char *ptr;
+	ptr=concat(f,s);
+	cout<<ptr<<endl;
+	concat1(f,s);
+}

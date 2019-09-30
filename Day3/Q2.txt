@@ -1,0 +1,32 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class Second;
+class First
+{
+	int a;
+public:
+	First(int a)
+	{
+		this->a=a;
+	}
+	friend class Second;
+};
+class Second
+{
+	public:
+		void fun1(First &ref){cout<<ref.a<<endl;}
+		void fun2(First &ref){cout<<ref.a<<endl;}
+		void fun3(First &ref){cout<<ref.a<<endl;}
+};
+int main()
+{ 
+	First f(10);
+	Second s;
+	s.fun1(f);
+	s.fun2(f);
+	s.fun3(f);
+	return 0;
+}
+//Above code is incomplete.
+//Make sure that all the member functions of "Second" will access "a".

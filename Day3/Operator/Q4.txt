@@ -1,0 +1,21 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class sample
+{
+public :
+	void disp1()
+	{
+		cout<<"in disp1"<<endl;
+	}
+	void disp2()
+	{
+		cout<<"in disp2"<<endl;
+		disp1();
+	}
+};
+int main()
+{
+	sample s1;
+	s1.disp2();
+}

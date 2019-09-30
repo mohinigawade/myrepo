@@ -1,0 +1,34 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class sample
+{
+	
+public:
+	sample ()
+	{
+	}
+	
+	void disp1()
+	{
+		cout<<"in disp1"<<endl;
+	}
+	void disp2()
+	{
+		cout<<"in disp2"<<endl;
+		
+	}
+};
+int main()
+{
+	sample s1;
+	s1.disp1();
+	s1.disp2();
+	sample &s=s1;
+	s.disp1();
+	s.disp2();
+}
+//Define a class with constructor and  member function
+//
+//	create object, call member function
+//	now create a reference to that object, and using that reference try to call member function

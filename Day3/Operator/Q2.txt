@@ -1,0 +1,27 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class sample
+   {
+	private:
+		char ch;
+	public:
+		sample(char ch)
+		{
+			this->ch=ch;
+		}
+		friend void disp(sample &);
+  };
+void disp(sample &ref)
+{
+	cout<<ref.ch<<endl;
+};
+int main()
+{
+	sample s('m');
+	disp(s);
+}
+//given above class.
+//
+//write a global function "display" which will access "ch" directly and display it.
+//call this function from main function.
