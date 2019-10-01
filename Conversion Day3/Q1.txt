@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+
+class Hour
+{
+	private:
+		int hr;
+	public:
+		Hour(int hr)
+		{
+			this->hr=hr;
+		}
+		void disp()
+		{
+			cout<<hr<<endl;
+		}
+		
+};
+class Minute
+{
+	private:
+		int mnt;
+	public:
+		Minute(int mnt)
+		{
+			this->mnt=mnt;
+		}
+		void disp()
+		{
+			cout<<mnt<<endl;
+		}
+		operator Hour()
+		{
+			Hour hr(mnt/60);
+			return hr;
+		}
+};
+void main()
+{
+	Hour r(100);
+	Minute p(20000);
+	r.disp();
+	p.disp();
+	r=p;
+	r.disp();
+}
+
+//
+//write a program to convert minutes to hours.
+//(Use operator= for conversion.)

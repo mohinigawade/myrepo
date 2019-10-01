@@ -1,0 +1,76 @@
+#include<iostream>
+using namespace std;
+
+//write a number class with
+//int num;
+//void disp(){}
+//u should be able to do following
+//number n1(20);
+//int k=-n1;
+//n1+=5;
+//n1.disp()
+//number n2(35);
+//if(n1!=n2)
+//{
+//	some message
+//}
+//number n3(12);
+//if(n3 < n1)
+//{
+//	some message
+//}
+//number n4;
+//n4=n2*n3;
+
+class Number
+{
+	int num;
+public:
+	Number ()
+	{
+		//this->num=num;
+	}
+	Number (int num)
+	{
+		this->num=num;
+	}
+	void disp()
+	{
+		cout<<num<<endl;
+	}
+	 operator int()
+	{
+		return (num);
+
+	}
+	 void operator +=(int num)
+	 {
+		 this->num+=num;
+	 }
+	 Number operator *(Number &ref)
+	 {
+		 return Number(num*ref.num);
+	 }
+	 
+};	
+int main()
+{
+	Number n1(20);
+    int k=-n1;
+	cout<<k<<endl;
+	n1+=5;
+	n1.disp();
+    Number n2(25);
+if(n1!=n2)
+{
+	cout<<"n1 is not equal to n2"<<endl;
+}
+Number n3(12);
+if(n3 < n1)
+{
+	cout<<"n1 is smaller to n2"<<endl;
+}
+Number n4;
+n4=n2*n3;
+n4.disp();
+}
