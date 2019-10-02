@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+//Define a class “MyNum” having a member variable “int num” and “void disp()”;	
+//	From main function, perform following				
+//	a) MyNum m1(20);						b) m1=100; //Do not use Constructor for this purpose			
+//	c) int k;						
+//	d) k=m1;							
+//	e) cout<<endl<<k<<endl;
+class MyNum
+{
+	int num;
+public:
+	explicit MyNum(int num)
+	 {
+		 this->num=num;
+		 cout<<"in constr"<<num<<endl;
+	 }
+	 void disp()
+	 {
+		 cout<<num<<endl;
+	 }
+	 operator int()
+	 {
+		 return num;
+	 }
+	 void operator=(int k)
+	{
+		this->num=k;
+		cout<<endl<<"in =operator function\n";
+	}
+
+};
+void main()
+{
+     MyNum m1(20);					
+	 m1=100; //Do not use Constructor for this purpose	
+	 m1.disp();
+	int k;						
+	k=m1;							
+	cout<<endl<<k<<endl;
+}

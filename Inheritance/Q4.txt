@@ -1,0 +1,54 @@
+
+class FourWheeler
+{
+public:
+	
+	virtual void start()=0;
+};
+class Qualis:public FourWheeler
+{
+	public:
+	Qualis()
+	{
+		cout<<"in no-arg Qualis"<<endl;
+	}
+	
+	//FourWheeler::start;
+	void start()
+	{
+		cout<<"Qualis started"<<endl;
+	}
+	
+};
+class Sumo:public FourWheeler
+{
+	public:
+	Sumo()
+	{
+		cout<<"in no-arg Sumo"<<endl;
+	}
+	void start()
+	{
+		cout<<"Sumo started"<<endl;
+	}
+};
+class Volvo:public FourWheeler
+{
+	public:
+	Volvo()
+	{
+		cout<<"in no-arg Volvo"<<endl;
+	}
+	void start()
+	{
+		cout<<"Volvo started"<<endl;
+	}
+};
+void main()
+{
+	FourWheeler *f[3]={new Qualis(),new Volvo() ,new Sumo() };
+	for(int i=0;i<3;i++)
+	{
+		f[i]->start();
+	}
+}

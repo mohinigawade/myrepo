@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+class base
+{
+	public:
+		base(char *ptr)
+		{
+			cout<<ptr<<endl;
+		}
+};
+class sub:public base
+{
+public :
+	sub():base("hello")
+	{
+		cout<<"in no-arg constructor"<<endl;
+	}
+	sub(int k):base("hello")
+	{
+		cout<<k<<endl;
+	}
+	sub(char ch,double d):base("hello")
+	{
+		cout<<ch<<d<<endl;
+	}
+};
+void main()
+{
+	sub s;
+sub *s1=new sub(40);
+sub *s2=new sub('a',4.5);
+}
+//
+//Following statements should be possible
+//
+//sub s;
+//
+//sub *s1=new sub(40);
+//
+//sub *s2=new sub('a',4.5);

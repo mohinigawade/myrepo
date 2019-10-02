@@ -1,0 +1,32 @@
+class course
+{
+public:
+	course()
+	{
+	cout<<"in no-arg Course"<<endl;
+	}
+	virtual void fee()
+	{
+		cout<<"in fee Course"<<endl;
+	}
+};
+class DacCourse:public course
+{
+public:
+	DacCourse()
+	{
+	cout<<"in no-arg DacCourse"<<endl;
+	}
+	void fee()
+	{
+		cout<<"in fee Dac"<<endl;
+	}
+};
+
+void main()
+{
+course *c=new course;
+c->fee(); // course version should be called
+c=new DacCourse;
+c->fee();  // DacCourse version should be called
+}
